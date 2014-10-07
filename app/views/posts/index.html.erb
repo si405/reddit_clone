@@ -1,0 +1,13 @@
+<h1>Welcome to Simon's "Reddit Clone"</h1>
+
+<%= link_to 'Create a new post', new_post_path %>
+
+<br><br>
+
+<%= @posts.each do |post| %>
+	<%= post.post_title %>
+	<%= post.post_url %>
+<% end %>
+
+
+
