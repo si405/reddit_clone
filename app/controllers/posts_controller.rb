@@ -10,12 +10,12 @@ class PostsController < ApplicationController
 	def create
 		# binding.pry
 		@post = Post.create(post_params)
-		redirect_to @posts
+		redirect_to @post
 	end
 	
 	# Set @posts to contain all the saved posts
 	def index
-		@posts = Post.all
+		@posts = Post.all.order(:created_at)
 	end
 
 	# Params contains the data being passed back from the view
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
 	# Show all saved posts
 	def show
-		@posts = Post.all
+		@posts = Post.all.order(:created_at)
 	end
 
 	private
