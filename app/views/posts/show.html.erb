@@ -1,12 +1,8 @@
-<h1>Welcome to Simon's "Reddit Clone"</h1>
+<h1>Welcome to Simon's "Reddit Clone" - Show</h1>
 
 <%= link_to 'Create a new post', new_post_path %>
 
 <br><br>
 
-<%= @posts.each do |post| %>
-	<%= post.post_title %>
-	<%= link_to post.post_url, post.post_url %>
-	<%= link_to "Edit post", edit_post_path(post) %>
-	<br>
-<% end %>
+<%= render 'form' %>
+
