@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 	
 	# Set @posts to contain all the saved posts
 	def index
-		@posts = Post.all
+		@posts = Post.all.order(created_at: :desc)
 	end
 
 	# Params contains the data being passed back from the view
