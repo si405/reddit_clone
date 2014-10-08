@@ -10,12 +10,12 @@ class PostsController < ApplicationController
 	def create
 		# binding.pry
 		@post = Post.create(post_params)
-		redirect_to @post
+		redirect_to posts_path 
 	end
 	
 	# Set @posts to contain all the saved posts
 	def index
-		@posts = Post.all.order(created_at: :desc)
+		@posts = Post.all
 	end
 
 	# Params contains the data being passed back from the view
@@ -29,9 +29,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		@post.update(post_params)
-		# I tried putting redirect_to @posts but it came up with an error so 
-		# need to look in to why that happened. Using @post/show instead
-		redirect_to @post
+		redirect_to posts_path
 	end
 
 	# Show all saved posts
