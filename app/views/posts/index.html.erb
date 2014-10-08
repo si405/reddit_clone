@@ -4,9 +4,4 @@
 
 <br><br>
 
-<%= @posts.each do |post| %>
-	<%= post.post_title %>
-	<%= post.post_url %>
-	<%= link_to "Edit post", edit_post_path(post) %>
-	<br>
-<% end %>
+<%= render 'form' %>
