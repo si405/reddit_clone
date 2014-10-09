@@ -4,5 +4,15 @@
 
 <br><br>
 
-<%= render 'form' %>
-
+<strong>Post Title: </strong>
+<%= @post.post_title %>
+<br>
+<strong>Post URL: </strong>
+<%= @post.post_url %>
+<br>
+<strong>Post Count: </strong>
+<%= @post.post_count %>
+<br>
+<br>
+<br>
+<%= link_to 'View all posts', posts_path %>

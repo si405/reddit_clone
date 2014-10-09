@@ -2,12 +2,17 @@
   <tr>
     <th>Post Title</th>
     <th>Post Link</th>
+    <th>Post Count</th>
   </tr>
-	<%= @posts.each do |post| %>
+	<% @posts.each do |post| %>
 		<tr>
       		<td><%= post.post_title %></td>
 			<td><%= link_to post.post_url, post.post_url %></td>
+			<td><%= post.post_count %></td>
+			<td><%= link_to "View post", post_path(post) %></td>
 			<td><%= link_to "Edit post", edit_post_path(post) %></td>
+			<td><%= link_to "Vote up post", upvote_post_path(post) %></td>
+			<td><%= link_to "Vote down post", downvote_post_path(post) %></td>
 			<td><%= link_to "Delete post", post_path(post),
 				method: :delete, data: { confirm: 'Are you sure?' } %></td>
 			<br>

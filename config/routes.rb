@@ -2,6 +2,13 @@ Rails.application.routes.draw do
   
   resources :posts
 
+  resources :posts do
+    member do
+      get 'upvote'
+      get 'downvote'
+    end
+  end
+ 
   root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
