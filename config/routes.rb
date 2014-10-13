@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :posts
-
   resources :posts do
     resources :comments
     member do
@@ -9,6 +7,8 @@ Rails.application.routes.draw do
       get 'downvote'
     end
   end
+
+  post 'posts/search' => 'posts#search'
  
   root 'posts#index'
 

@@ -1,0 +1,10 @@
+<h2>Search results:</h2>
+<ul>
+    <% @posts.each do |post| %>
+  <li><%= link_to post.post_title, 
+    :action => 'show', :id => post.id  %></li>
+  <% end %>
+ </ul>
+<br>
+<br>
+ <%= link_to 'View all posts', posts_path %>
