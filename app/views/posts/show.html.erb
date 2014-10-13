@@ -1,39 +1,7 @@
-<h2>Post:</h2>
-<strong>Post Title: </strong>
-<%= @post.post_title %>
-<br>
-<strong>Post URL: </strong>
-<%= @post.post_url %>
-<br>
-<strong>Post Count: </strong>
-<%= @post.post_count %>
-<br>
-<br>
-<h2>Comments:</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    Comment by: <%= comment.commenter %>
-  </p>
-  <p>
-    Comment: <%= comment.body %>
-  </p>
-<% end %>
-<br>
-<br>
-<h2>Add a comment to this post:</h2>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-<br>
-<br>
+<%= render 'post_detail' %>
+
+<%= render 'comment_detail' %>
+
+<%= render 'get_more_comments' %>
+
 <%= link_to 'View all posts', posts_path %>

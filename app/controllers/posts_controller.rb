@@ -10,7 +10,6 @@ class PostsController < ApplicationController
 	def create
 		# binding.pry
 		@post = Post.create(post_params)
-		@post.post_count = 0
 		redirect_to posts_path 
 	end
 	
